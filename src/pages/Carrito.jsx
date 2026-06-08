@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import { Container, Table, Button, Alert } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 function Carrito({ carrito, aumentarCantidad, disminuirCantidad, eliminarProducto }) {
   const [confirmado, setConfirmado] = useState(false)
+  const navigate = useNavigate()
+
   const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
-  const cantidadTotal = carrito.reduce((acc, item) => acc + item.cantidad, 0)
 
   const handleConfirmarCompra = () => {
     setConfirmado(true)
+    navigate('/contacto')
   }
 
   return (
@@ -64,7 +67,6 @@ function Carrito({ carrito, aumentarCantidad, disminuirCantidad, eliminarProduct
             </tbody>
           </Table>
           <h4>Total: ${total}</h4>
-          <h5>Cantidad total de productos: {cantidadTotal}</h5>
 
           <Button variant="primary" className="mt-3" onClick={handleConfirmarCompra}>
             Confirmar compra
@@ -72,7 +74,7 @@ function Carrito({ carrito, aumentarCantidad, disminuirCantidad, eliminarProduct
 
           {confirmado && (
             <Alert variant="success" className="mt-3">
-              Gracias por tu pedido, pronto recibirás un correo con los detalles.
+              Redirigiendo a la página de contacto...
             </Alert>
           )}
         </>
