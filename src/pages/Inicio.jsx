@@ -9,17 +9,12 @@ function Inicio() {
         src="/img/logo.png" 
         alt="Logo de la tienda" 
         className="mb-3" 
-        style={{ width: '150px' }} 
+        style={{ width: '500px' }} 
       />
       <p className="lead">
         Bienvenido a Tienda Retro, un emprendimiento dedicado a ofrecer productos<br />
         tecnológicos de calidad a precios accesibles.
       </p>
-      <img 
-        src="/img/banner.jpg" 
-        alt="Banner principal" 
-        className="img-fluid rounded mb-4" 
-      />
       <Link to="/productos">
         <Button variant="primary" size="lg"> Ver catálogo </Button>
       </Link>
