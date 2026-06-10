@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Container, Table, Button, Alert } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-function Carrito({ carrito, aumentarCantidad, disminuirCantidad, eliminarProducto }) {
+function Carrito({ carrito, productos, aumentarCantidad, disminuirCantidad, eliminarProducto }) {
   const [confirmado, setConfirmado] = useState(false)
   const navigate = useNavigate()
 
@@ -43,6 +43,7 @@ function Carrito({ carrito, aumentarCantidad, disminuirCantidad, eliminarProduct
                       size="sm" 
                       className="me-2"
                       onClick={() => aumentarCantidad(item.id)}
+                      disabled={productos.find(p => p.id === item.id)?.stock <= 0}
                     >
                       +
                     </Button>

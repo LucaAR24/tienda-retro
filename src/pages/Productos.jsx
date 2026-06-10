@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import ProductoCard from '../components/ProductoCard'
-import productos from '../data/productos'
 
-function Productos({ agregarAlCarrito }) {
+function Productos({ productos, agregarAlCarrito }) {
   const [busqueda, setBusqueda] = useState("")
   const [categoria, setCategoria] = useState("")
   const [orden, setOrden] = useState("")

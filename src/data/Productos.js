@@ -6,7 +6,7 @@ const productos = [
     precio: 30000,
     imagen: "/img/auriculares.jpg",
     descripcion: "Auriculares Bluetooth con buena autonomía.",
-    stock: 6
+    stock: 12
   },
   {
     id: 2,
@@ -104,7 +104,7 @@ const productos = [
     categoria: "Motherboards",
     precio: 150000,
     imagen: "/img/motherboardASUS.jpg",
-    descripcion: "Motherboard ASUS AM4.",
+    descripcion: "Motherboard ASUS Z390.",
     stock: 3
   }
 ]

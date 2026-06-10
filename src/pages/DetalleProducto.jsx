@@ -1,8 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
-import productos from '../data/productos'
 import { Card, Button, Container } from 'react-bootstrap'
 
-function DetalleProducto({ agregarAlCarrito }) {
+function DetalleProducto({ productos, agregarAlCarrito }) {
   const { id } = useParams()
   const producto = productos.find(p => p.id === parseInt(id))
 
